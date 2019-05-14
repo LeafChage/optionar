@@ -27,12 +27,12 @@ some = Optionar::some(value)
 new_some = some.map{|s| s+50}
     .map{|s| s+50}
     .map{|s| s+50}
-puts new_some.wrap() # 250 or nil
+puts new_some.unwrap() # 250 or nil
 
 value2 = nil
 some2 = Optionar::some(value2)
 new_some2 = some2.map_or(50){|s| s+50}
-puts new_some2.wrap() # 100
+puts new_some2.unwrap() # 100
 
 # Look at test for detail.
 ```

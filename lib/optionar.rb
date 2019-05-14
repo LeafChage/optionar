@@ -19,11 +19,11 @@ module Optionar
       @val == nil
     end
 
-    def wrap
+    def unwrap
       @val
     end
 
-    def wrap_or(default)
+    def unwrap_or(default)
       some? ? @val : default
     end
 

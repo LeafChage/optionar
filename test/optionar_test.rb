@@ -26,33 +26,33 @@ class OptionarTest < Minitest::Test
     assert @none2.none? == true
   end
 
-  def test_wrap
-    assert @some.wrap == VALUE
-    assert @none1.wrap == nil
-    assert @none2.wrap == nil
+  def test_unwrap
+    assert @some.unwrap == VALUE
+    assert @none1.unwrap == nil
+    assert @none2.unwrap == nil
   end
 
-  def test_wrap_or
-    assert @some.wrap_or(DEFAULT_VALUE) == VALUE
-    assert @none1.wrap_or(DEFAULT_VALUE) == DEFAULT_VALUE
-    assert @none2.wrap_or(DEFAULT_VALUE) == DEFAULT_VALUE
+  def test_unwrap_or
+    assert @some.unwrap_or(DEFAULT_VALUE) == VALUE
+    assert @none1.unwrap_or(DEFAULT_VALUE) == DEFAULT_VALUE
+    assert @none2.unwrap_or(DEFAULT_VALUE) == DEFAULT_VALUE
   end
 
   def test_map
-    assert @some.map(){|v| v + 1}.wrap() == @some.wrap + 1
-    assert @none1.map(){|v| v + 1}.wrap() == nil
-    assert @none2.map(){|v| v + 1}.wrap() == nil
+    assert @some.map(){|v| v + 1}.unwrap() == @some.unwrap + 1
+    assert @none1.map(){|v| v + 1}.unwrap() == nil
+    assert @none2.map(){|v| v + 1}.unwrap() == nil
   end
 
   def test_map_or
-    assert @some.map_or(DEFAULT_VALUE){|v| v + 1}.wrap() == @some.wrap + 1
-    assert @none1.map_or(DEFAULT_VALUE){|v| v + 1}.wrap() == DEFAULT_VALUE + 1
-    assert @none2.map_or(DEFAULT_VALUE){|v| v + 1}.wrap() == DEFAULT_VALUE + 1
+    assert @some.map_or(DEFAULT_VALUE){|v| v + 1}.unwrap() == @some.unwrap + 1
+    assert @none1.map_or(DEFAULT_VALUE){|v| v + 1}.unwrap() == DEFAULT_VALUE + 1
+    assert @none2.map_or(DEFAULT_VALUE){|v| v + 1}.unwrap() == DEFAULT_VALUE + 1
   end
 
   def test_map_or_action
-    assert @some.map_or_action(->(v){v + 1}, ->{5000}).wrap() == @some.wrap + 1
-    assert @none1.map_or_action(->(v){v + 1}, ->{5000}).wrap() == 5000
-    assert @none2.map_or_action(->(v){v + 1}, ->{5000}).wrap() == 5000
+    assert @some.map_or_action(->(v){v + 1}, ->{5000}).unwrap() == @some.unwrap + 1
+    assert @none1.map_or_action(->(v){v + 1}, ->{5000}).unwrap() == 5000
+    assert @none2.map_or_action(->(v){v + 1}, ->{5000}).unwrap() == 5000
   end
 end
