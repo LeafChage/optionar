@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Do you like nil?"
   spec.description   = "You can use 'optional' like swift"
-  spec.homepage      = "https://github.com/LeafChage"
+  spec.homepage      = "https://github.com/LeafChage/optional"
   spec.license       = "MIT"
 
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
