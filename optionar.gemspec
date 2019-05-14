@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "optional/version"
+require "optionar/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "optional"
-  spec.version       = Optional::VERSION
+  spec.name          = "optionar"
+  spec.version       = Optionar::VERSION
   spec.authors       = ["LeafChage"]
   spec.email         = ["d0o0b_lx3xl@yahoo.co.jp"]
 
   spec.summary       = "Do you like nil?"
-  spec.description   = "You can use 'optional' like swift"
-  spec.homepage      = "https://github.com/LeafChage/optional"
+  spec.description   = "You can use 'optionar' like swift"
+  spec.homepage      = "https://github.com/LeafChage/optionar"
   spec.license       = "MIT"
 
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do

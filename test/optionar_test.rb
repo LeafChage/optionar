@@ -1,17 +1,17 @@
 require "test_helper"
 
-class OptionalTest < Minitest::Test
+class OptionarTest < Minitest::Test
   VALUE = 10
   DEFAULT_VALUE = 20
 
   def setup
-    @some = Optional::some(VALUE)
-    @none1 = Optional::none()
-    @none2 = Optional::some(nil)
+    @some = Optionar::some(VALUE)
+    @none1 = Optionar::none()
+    @none2 = Optionar::some(nil)
   end
 
   def test_that_it_has_a_version_number
-    refute_nil ::Optional::VERSION
+    refute_nil ::Optionar::VERSION
   end
 
   def test_some?

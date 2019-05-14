@@ -1,16 +1,16 @@
-require "optional/version"
+require "optionar/version"
 
-module Optional
+module Optionar
   class Error < StandardError; end
   def self::some(value)
-    Optional.new(value)
+    Optionar.new(value)
   end
 
   def self::none
-    Optional.new(nil)
+    Optionar.new(nil)
   end
 
-  class Optional
+  class Optionar
     def some?
       @val != nil
     end
@@ -29,7 +29,7 @@ module Optional
 
     def map(&block)
       if some?
-        Optional.new(yield @val)
+        Optionar.new(yield @val)
       else
         self
       end
@@ -37,17 +37,17 @@ module Optional
 
     def map_or(default, &block)
       if some?
-        Optional.new(yield @val)
+        Optionar.new(yield @val)
       else
-        Optional.new(yield default)
+        Optionar.new(yield default)
       end
     end
 
     def map_or_action(action, default_action)
       if some?
-        Optional.new(action.call @val)
+        Optionar.new(action.call @val)
       else
-        Optional.new(default_action.call)
+        Optionar.new(default_action.call)
       end
     end
 

@@ -1,3 +1,3 @@
-module Optional
+module Optionar
   VERSION = "0.1.0"
 end

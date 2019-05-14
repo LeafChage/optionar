@@ -1,6 +1,6 @@
-# Optional
+# Optionar
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/optional`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/optionar`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 Do you like nil?
 
@@ -9,7 +9,7 @@ Do you like nil?
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'optional'
+gem 'optionar'
 ```
 
 And then execute:
@@ -18,19 +18,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install optional
+    $ gem install optionar
 
 ## Usage
 ```ruby
 value = 100 # or nil
-some = Optional::some(value)
+some = Optionar::some(value)
 new_some = some.map{|s| s+50}
     .map{|s| s+50}
     .map{|s| s+50}
 puts new_some.wrap() # 250 or nil
 
 value2 = nil
-some2 = Optional::some(value2)
+some2 = Optionar::some(value2)
 new_some2 = some2.map_or(50){|s| s+50}
 puts new_some2.wrap() # 100
 
@@ -46,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/optional.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/optionar.
 
 ## License
 
